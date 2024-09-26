@@ -64,8 +64,9 @@ def check():
 def buy(): 
     
     load_dotenv() 
-
+    
     username = os.environ.get('USERNAME')
+    print(username)
     password = os.environ.get('PASSWORD')
     count = int(os.environ.get('COUNT'))
     slack_webhook_url = os.environ.get('SLACK_WEBHOOK_URL') 
