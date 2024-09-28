@@ -56,6 +56,7 @@ def check():
     globalAuthCtrl = auth.AuthController()
     globalAuthCtrl.login(username, password)
 
+    notify = notification.Notification()
     message = 'asdf'
     notify._send_slack_webhook(slack_bot_token, slack_channel, message)
     
