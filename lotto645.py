@@ -169,8 +169,8 @@ class Lotto645:
 
         data = {
             "nowPage": 1, 
-            "searchStartDate": "20240911", #parameters["searchStartDate"],
-            "searchEndDate": "20240911", #parameters["searchEndDate"],
+            "searchStartDate": parameters["searchStartDate"],
+            "searchEndDate": parameters["searchEndDate"],
             "winGrade": 1,
             "lottoId": "LO40", 
             "sortOrder": "DESC"
