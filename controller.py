@@ -57,11 +57,9 @@ def check():
     globalAuthCtrl.login(username, password)
 
     response = check_winning_lotto645(globalAuthCtrl)
-    print(response)
     send_message(0, 0, response=response, token=slack_bot_token, channel=slack_channel)
 
     response = check_winning_win720(globalAuthCtrl)
-    print(response)
     send_message(0, 1, response=response, token=slack_bot_token, channel=slack_channel)
 
 def buy(): 
