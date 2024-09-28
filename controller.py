@@ -51,15 +51,15 @@ def check():
     username = os.environ.get('USERNAME')
     password = os.environ.get('PASSWORD')
     slack_webhook_url = os.environ.get('SLACK_WEBHOOK_URL') 
-    discord_webhook_url = os.environ.get('DISCORD_WEBHOOK_URL')
+    #discord_webhook_url = os.environ.get('DISCORD_WEBHOOK_URL')
 
     globalAuthCtrl = auth.AuthController()
     globalAuthCtrl.login(username, password)
     response = check_winning_lotto645(globalAuthCtrl)
-    send_message(0, 0, response=response, webhook_url=discord_webhook_url)
+    send_message(0, 0, response=response, webhook_url=slack_webhook_url)
 
     response = check_winning_win720(globalAuthCtrl)
-    send_message(0, 1, response=response, webhook_url=discord_webhook_url)
+    send_message(0, 1, response=response, webhook_url=slack_webhook_url)
 
 def buy(): 
     
@@ -69,17 +69,17 @@ def buy():
     password = os.environ.get('PASSWORD')
     count = int(os.environ.get('COUNT'))
     slack_webhook_url = os.environ.get('SLACK_WEBHOOK_URL') 
-    discord_webhook_url = os.environ.get('DISCORD_WEBHOOK_URL')
+    #discord_webhook_url = os.environ.get('DISCORD_WEBHOOK_URL')
     mode = "AUTO"
 
     globalAuthCtrl = auth.AuthController()
     globalAuthCtrl.login(username, password)
 
     response = buy_lotto645(globalAuthCtrl, count, mode) 
-    send_message(1, 0, response=response, webhook_url=discord_webhook_url)
+    send_message(1, 0, response=response, webhook_url=slack_webhook_url)
 
     response = buy_win720(globalAuthCtrl) 
-    send_message(1, 1, response=response, webhook_url=discord_webhook_url)
+    send_message(1, 1, response=response, webhook_url=slack_webhook_url)
 
 def run():
     if len(sys.argv) < 2:
