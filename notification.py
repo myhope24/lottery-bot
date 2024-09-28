@@ -71,6 +71,6 @@ class Notification:
             return
 
     def _send_slack_webhook(self, token: str, channel: str, message: str) -> None:        
-        payload = { "channel": channel }
+        payload = { "text": message, "channel": channel }
         headers = { "Content-Type": "application/json", "Authorization": f"Bearer {token}" }
         requests.post("https://slack.com/api/chat.postMessage", json=payload, headers=headers)
