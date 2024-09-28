@@ -55,6 +55,10 @@ def check():
 
     globalAuthCtrl = auth.AuthController()
     globalAuthCtrl.login(username, password)
+
+    message = 'asdf'
+    notify._send_slack_webhook(slack_bot_token, slack_channel, message)
+    
     response = check_winning_lotto645(globalAuthCtrl)
     send_message(0, 0, response=response, token=slack_bot_token, channel=slack_channel)
 
