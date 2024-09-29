@@ -57,6 +57,10 @@ def check():
     globalAuthCtrl.login(username, password)
 
     response = check_winning_lotto645(globalAuthCtrl)
+    print(response)
+    notify = notification.Notification()
+    notify._send_slack_webhook('test', token, channel)
+
     send_message(0, 0, response=response, token=slack_bot_token, channel=slack_channel)
 
     response = check_winning_win720(globalAuthCtrl)
