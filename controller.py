@@ -59,7 +59,7 @@ def check():
     response = check_winning_lotto645(globalAuthCtrl)
     print(response)
     notify = notification.Notification()
-    notify._send_slack_webhook('test', token, channel)
+    notify._send_slack_webhook(slack_bot_token, slack_channel, 'test')
 
     send_message(0, 0, response=response, token=slack_bot_token, channel=slack_channel)
 
